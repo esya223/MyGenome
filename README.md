@@ -131,3 +131,17 @@ Bm88312_final-snap.gff2
 
 snap-hmm Moryzae.hmm Bm88312_final.fasta > Bm88312_final-snap.zff
 fathom Bm88312_final-snap.zff Bm88312_final.fasta -gene-stats
+OUTPUT:
+Bm88312_final-augustus.gff3
+gff3_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log \
+-o Bm88312_final-annotations.gff
+
+OUTPUT:
+Bm88312_final-annotations.gff 
+
+maker -CTL
+
+fasta_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log -o Bm88312_final.maker.proteins.fasta
+
+OUTPUT:
+Bm88312_final.maker.proteins.fasta
