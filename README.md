@@ -9,9 +9,9 @@ Run forward and reverse sequences through FastQC for quality assessment.
 ```fastqc Bm88312_2.fq.gz```
 
 #### Full FastQC Results 
-<details>Bm88312_1_paired_fastqc.html 
+<details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
 
-Bm88312_2_paired_fastqc.html</details>
+[Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
 
 
 ## Trimming
