@@ -2,7 +2,7 @@
 
 ## Sequence Quality Assessment
 
-Run both forward and reverse sequences through FastQC for quality assessment.
+Run forward and reverse sequences through FastQC for quality assessment.
 
 ```fastqc Bm88312_1.fq.gz```
 
