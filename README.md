@@ -23,6 +23,7 @@ unzip Bm88312_2_paired_fastqc.zip
 <details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
 [Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
 
+## Assembly
 
 ```sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2```
 
