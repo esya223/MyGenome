@@ -16,8 +16,7 @@ Run relevant Trimmomatic command
 
 ```Bm88312_1_paired_fastqc.zip  Bm88312_2_paired_fastqc.zip```
 
-unzip Bm88312_1_paired_fastqc.zip
-unzip Bm88312_2_paired_fastqc.zip
+unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 
 #### Full FastQC Results 
 <details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
