@@ -19,7 +19,10 @@ java -jar trimmomatic-0.38.jar PE -threads 2 \-phred33 -trimlog Br88312_errorlog
 
 #### Output
 
-```Bm88312_1_paired_fastqc.zip  Bm88312_2_paired_fastqc.zip```
+```
+Bm88312_1_paired_fastqc.zip
+Bm88312_2_paired_fastqc.zip
+```
 
 unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 
