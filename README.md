@@ -8,7 +8,7 @@ Run forward and reverse sequences through FastQC for quality assessment.
 
 ```fastqc Bm88312_2.fq.gz```
 
-^ Full FastQC results found in files 
+^Full FastQC results found in files 
 
 Bm88312_1_paired_fastqc.html 
 
