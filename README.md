@@ -32,9 +32,12 @@ unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 
 ## Assembly
 
-```sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2```
-
-```sbatch velvetoptimiser_noclean.sh Bm88312_step10 69 89 10```
+```
+sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2
+```
+```
+sbatch velvetoptimiser_noclean.sh Bm88312_step10 69 89 10
+```
 
 OUTPUT:
 slurm-30186556.out
