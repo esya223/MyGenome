@@ -23,15 +23,10 @@ unzip Bm88312_2_paired_fastqc.zip
 <details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
 [Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
 
-ssh esya223@mcc.uky.edu
 
-cd /project/farman_s25abt480/esya223
+```sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2```
 
-mv Bm88312 Bm88312_step2
-sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2
-
-mv Bm88312 Bm88312_step2
-sbatch velvetoptimiser_noclean.sh Bm88312_step10 69 89 10
+```sbatch velvetoptimiser_noclean.sh Bm88312_step10 69 89 10```
 
 OUTPUT:
 slurm-30186556.out
