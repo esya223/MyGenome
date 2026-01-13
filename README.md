@@ -4,7 +4,10 @@
 
 Run forward and reverse sequences through FastQC for quality assessment.
 
-```fastqc Bm88312_1.fq.gz  fastqc Bm88312_2.fq.gz```
+```
+fastqc Bm88312_1.fq.gz
+fastqc Bm88312_2.fq.gz
+```
 
 ## Trimming
 
