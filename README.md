@@ -8,13 +8,10 @@ Run forward and reverse sequences through FastQC for quality assessment.
 
 ```fastqc Bm88312_2.fq.gz```
 
-<details><summary>Bm88312_1_paired_fastqc.html 
+<details>Bm88312_1_paired_fastqc.html 
 
-Bm88312_2_paired_fastqc.html</summary></details>
+Bm88312_2_paired_fastqc.html</details>
 
-<summary>Bm88312_1_paired_fastqc.html 
-
-Bm88312_2_paired_fastqc.html</summary>
 
 ## Trimming
 
