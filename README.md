@@ -8,11 +8,6 @@ Run forward and reverse sequences through FastQC for quality assessment.
 
 ```fastqc Bm88312_2.fq.gz```
 
-#### Full FastQC Results 
-<details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
-[Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
-
-
 ## Trimming
 
 Run relevant Trimmomatic command 
@@ -25,6 +20,10 @@ Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 unzip Bm88312_1_paired_fastqc.zip
 unzip Bm88312_2_paired_fastqc.zip
 scp  Bm88312_1_paired.fq esya223@mcc.uky.edu:/projects/farman_s25abt480/esya223
+
+#### Full FastQC Results 
+<details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
+[Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
 
 ssh esya223@mcc.uky.edu
 
