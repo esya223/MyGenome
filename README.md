@@ -1,7 +1,5 @@
 # MyGenome
 
-**Sequence Quality Assessment
-**
 $env:DISPLAY = “localhost:0”
 
 ssh -Y LinkBlue@LinkBlue.cs.uky.edu
