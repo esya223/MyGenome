@@ -63,7 +63,9 @@ Bm88312_final.fasta
 cp /project/farman_s25abt480/SCRIPTs/SeqLen.pl ./
 perl SeqLen.pl Bm88312_final.fasta
 
+```
 awk '/^>/ {if (seqlen >= 200) {print header; print seq}; header=$0; seq=""; seqlen=0; next} {seq=seq $0; seqlen+=length($0)} END {if (seqlen >= 200) {print header; print seq}}' Bm88312_nh.fasta > Bm88312_final.fasta
+```
 
 awk '{print $2}' seq_stats.txt | awk '
 BEGIN {n=0; sum=0; max=0; min=1e9}
