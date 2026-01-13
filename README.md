@@ -4,7 +4,7 @@
 
 Run forward and reverse sequences through FastQC for quality assessment.
 
-```fastqc Bm88312_1.fq.gz fastqc Bm88312_2.fq.gz```
+```fastqc Bm88312_1.fq.gz                                                                                                                                                                   fastqc Bm88312_2.fq.gz```
 
 ## Trimming
 
@@ -14,7 +14,7 @@ Run relevant Trimmomatic command
 
 #### Output
 
-```Bm88312_1_paired_fastqc.zip  Bm88312_2_paired_fastqc.zip```
+```Bm88312_1_paired_fastqc.zip                                                                                                                                                          Bm88312_2_paired_fastqc.zip```
 
 unzip Bm88312_1_paired_fastqc.zip
 unzip Bm88312_2_paired_fastqc.zip
