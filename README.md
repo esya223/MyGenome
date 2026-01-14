@@ -166,14 +166,6 @@ tar -zxvpf ncbi-blast-2.16.0+-x64-linux.tar.gz
 ```
 
 ```
-cd ~/blast
-blastn -query MoMitochondrion.fasta -subject Bm88312_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' > B71v2sh.Bm88312.BLAST
-```
-
-OUTPUT:
-```
-B71v2sh.Bm88312.BLAST
-```
 <summary>Ensure the total length of the mitochondrial sequences is <40kb 
   
 ```
