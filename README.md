@@ -36,8 +36,8 @@ unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 
 | Sequence | Reads |
 | -------- | ----- |
-|Raw Reads | 7234892|
-|Cleaned Reads| 6356443|
+|Raw Reads (single end) | 7234892|
+|Cleaned Reads (single end)| 6356443|
 |Total Bases in Cleaned Reads| 1901184532|
 
 ## Assembly
