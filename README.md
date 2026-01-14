@@ -193,6 +193,7 @@ B71v2sh.Bm88312.BLAST
 
 <summary> Following genome assembly, predict proteins using SNAP and AUGUSTUS
 <summary>Prepare MAKER annotation
+  
 ```
 echo '##FASTA' | cat B71Ref2_a0.3.gff3 - B71Ref2.fasta > B71Ref2.gff3
 grep '##FASTA' -B 5 -A 5 B71Ref2.gff3
