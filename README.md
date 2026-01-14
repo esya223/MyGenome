@@ -1,6 +1,6 @@
 # MyGenome
 
-__Pyricularia orzyzae_ or _Magnaporthe oryzae (2002)_, causes a devastating fungal disease that affects rice plants by creating lesions on leaves, stems and panicles. Through identifying and sequencing this fungus, information can be concluded about the pathogen's evolution, genetic variability, and host potential. _P. oryzae_ used for this data was collected from the host _Urochloa mutica_ in Nueve Ecija in the Philipines and was sequenced via ILLUMINA NovaSeq X. The assembled genome was submitted to NCBI (BioSample ID: SAMN46924042, SRA Accession: SRR32567630, BioProject: PRJNA1226220).
+_Pyricularia orzyzae_ or _Magnaporthe oryzae (2002)_, causes a devastating fungal disease that affects rice plants by creating lesions on leaves, stems and panicles. Through identifying and sequencing this fungus, information can be concluded about the pathogen's evolution, genetic variability, and host potential. _P. oryzae_ used for this data was collected from the host _Urochloa mutica_ in Nueve Ecija in the Philipines and was sequenced via ILLUMINA NovaSeq X. The assembled genome was submitted to NCBI (BioSample ID: SAMN46924042, SRA Accession: SRR32567630, BioProject: PRJNA1226220).
 
 ## Sequence Quality Assessment
 
