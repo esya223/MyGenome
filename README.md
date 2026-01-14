@@ -45,7 +45,7 @@ unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 <summary> Assembly was completed on MCC
 <summary> scp was used to transfer trimmed sequences from the virtual machine to MCC.
 <summary> Optimal k-mer values for the genome assembly was determined with Velvet Advisor (https://dna.med.monash.edu.au/~torsten/velvet_advisor/)
-<summary> VelvetOptimiser ran at step 10 an step 2 to find the k-value. 
+<summary> VelvetOptimiser ran at step 10 and 2 to find the optimal k-value. 
 
 
 ```
@@ -71,6 +71,12 @@ OUTPUT:
 slurm-30186556.out
 slurm-30186446.out
 contigs.fa
+```
+<summary> Run Velvet genome assembly with optimal k-mer value'
+
+```
+velveth Bm88312_step2_69_89_2 -shortPaired -fastq -separate Bm88312_1_paired.fastq Bm88312_2_paired.fastq
+velvetg Bm88312_step2_69_89_2
 ```
 
 ```
