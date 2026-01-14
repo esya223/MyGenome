@@ -78,17 +78,21 @@ contigs.fa
 velveth Bm88312_step2_69_89_2 -shortPaired -fastq -separate Bm88312_1_paired.fastq Bm88312_2_paired.fastq
 velvetg Bm88312_step2_69_89_2
 ```
+## Process Assembly
+
+<summary> Finalize genome assembly. Rename contigs.fa to Bm88312.fasta
+<summary> SimpleFastaHeaders.pl renames the headers for each contig.
+<summary> CullShortContigs.pl removes small contigs.
+<summary> </summary>SeqLen.pl checks overall sequence length and the length of each contig.
 
 ```
-cp /project/farman_s25abt480/SCRIPTs/SimpleFastaHeaders.pl /project/farman_s25abt480/esya223
 perl SimpleFastaHeaders.pl Bm88312.fasta Bm88312
 ```
 OUTPUT:
 Bm88312_nh.fasta
 
-cd ./Bm88312_step2/velvet_Bm88312_step2_69_89_2_noclean/
-
 ```
+cd ./Bm88312_step2/velvet_Bm88312_step2_69_89_2_noclean/
 cp /project/farman_s25abt480/SCRIPTs/CullShortContigs.pl ./ 
 perl CullShortContigs.pl Bm88312_nh.fasta
 ```
@@ -105,6 +109,8 @@ perl SeqLen.pl Bm88312_final.fasta
 awk '/^>/ {if (seqlen >= 200) {print header; print seq}; header=$0; seq=""; seqlen=0; next} {seq=seq $0; seqlen+=length($0)} END {if (seqlen >= 200) {print header; print seq}}' Bm88312_nh.fasta > Bm88312_final.fasta
 ```
 
+<summary> Visualize Data 
+  
 ```
 awk '{print $2}' seq_stats.txt | awk '
 BEGIN {n=0; sum=0; max=0; min=1e9}
@@ -116,7 +122,8 @@ END {
   print "Shortest contig:", min;
   print "Average contig length:", int(sum/n)}'
 ```
-
+<summary>Assess the genomse assembly with BUSCO
+  
 ```
 cp /project/farman_s25abt480/SCRIPTs/BuscoSingularity.sh ./
 sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh path/to/Bm88312_final.fasta
@@ -133,6 +140,10 @@ busco -i Bm88312_final.fasta \
 
 OUTPUT:
 C:98.5%[S:98.2%,D:0.3%],F:0.8%,M:0.7%,n:758
+
+|BUSCO score (%)|BUSCO score (complete + fragmented) (%)|
+|---------------|---------------------------------------|
+|98.50%|99.30%|
 
 myVM
 scp ngs@10.163.183.71:/home/ngs/Desktop/MoMitochondrion.fasta ~/blast/
