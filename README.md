@@ -89,7 +89,9 @@ velvetg Bm88312_step2_69_89_2
 perl SimpleFastaHeaders.pl Bm88312.fasta Bm88312
 ```
 OUTPUT:
+```
 Bm88312_nh.fasta
+```
 
 ```
 cd ./Bm88312_step2/velvet_Bm88312_step2_69_89_2_noclean/
@@ -98,7 +100,9 @@ perl CullShortContigs.pl Bm88312_nh.fasta
 ```
 
 OUTPUT:
+```
 Bm88312_final.fasta
+```
 
 ```
 cp /project/farman_s25abt480/SCRIPTs/SeqLen.pl ./
@@ -145,42 +149,55 @@ C:98.5%[S:98.2%,D:0.3%],F:0.8%,M:0.7%,n:758
 |---------------|---------------------------------------|
 |98.50%|99.30%|
 
-myVM
+<summary>Identify mitochondiral genome and export a list if contigs with mitochondrial DNA for NCBI
+  
+```
 scp ngs@10.163.183.71:/home/ngs/Desktop/MoMitochondrion.fasta ~/blast/
-
+```
+```
 wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.16.0+-x64-linux.tar.gz
+```
 
 OUTPUT:
+```
 ncbi-blast-2.16.0+-x64-linux.tar.gz
 tar -zxvpf ncbi-blast-2.16.0+-x64-linux.tar.gz
 ./blastn -version
+```
 
-cd ~/blast
+```cd ~/blast
 blastn -query MoMitochondrion.fasta -subject Bm88312_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' > B71v2sh.Bm88312.BLAST
+```
 
 OUTPUT:
+```
 B71v2sh.Bm88312.BLAST
-
+```
+<summary>Ensure the total length of the mitochondrial sequences is <40kb 
+```
 awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.Bm88312.BLAST > Bm88312_mitochondrion.csv
+```
 
 OUTPUT:
+```
 Bm88312_mitochondrion.csv
+```
 
-ssh esya223@mcc.uky.edu
-
-cp /project/farman_s25abt480/FASTA/B71v2sh_masked.fasta /project/farman_s25abt480/esya223/
-
+<summary>Use blastn to run a BLAST search against the reference genome (B71)
+```
 blastn -query B71v2sh_masked.fasta -subject Bm88312_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.Bm88312.BLAST
+```
 
 OUTPUT:
+```
 B71v2sh.Bm88312.BLAST
+```
 
-cp B71v2sh.Bm88312.BLAST /project/farman_s25abt480/CLASS_BLASTs/
+## Gene Prediction
 
-scp ngs@10.163.183.71:/Users/ngs/Desktop/B71ref2.fasta .
-scp ngs@10.163.183.71:/Users/ngs/Desktop/B71Ref2_a0.3.gff3 .
-
-screen -S genes bash -l
+<summary> Following genome assembly, predict proteins using SNAP and AUGUSTUS
+<summary>Prepare MAKER annotation
+```
 echo '##FASTA' | cat B71Ref2_a0.3.gff3 - B71Ref2.fasta > B71Ref2.gff3
 grep '##FASTA' -B 5 -A 5 B71Ref2.gff3
 maker2zff B71Ref2.gff3
@@ -192,24 +209,53 @@ hmm-assembler.pl Moryzae . > Moryzae.hmm
 snap-hmm Moryzae.hmm Bm88312_final.fasta > Bm88312_final-snap.zff
 fathom Bm88312_final-snap.zff Bm88312_final.fasta -gene-stats
 snap-hmm Moryzae.hmm Bm88312_final.fasta -gff > Bm88312_final-snap.gff2
+```
 
+<summary> This prepares the .gff3 file for MAKER annotation and converts MAKER annotations to ZFF for SNAP.
+<summary> fathom extracts genome regions containing unique genes.
+<summary> HMM is trained using the forge tool command.
+  
 OUTPUT:
+```
 Bm88312_final-snap.zff
 Bm88312_final-snap.gff2
+```
 
+<summary> Run SNAP
+```
 snap-hmm Moryzae.hmm Bm88312_final.fasta > Bm88312_final-snap.zff
 fathom Bm88312_final-snap.zff Bm88312_final.fasta -gene-stats
+```
+
+<summary> Run AUGUSTUS
+```
+  augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/Bm88312_final.fasta > Bm88312-augustus.gff3
+```
+  
 OUTPUT:
+```
 Bm88312_final-augustus.gff3
+```
+
+<summary> Run MAKER
+
+```
+maker -CTL
+maker 2>&1 | tee maker.log
+```
+
+<summary> Merge results into one file
+```
 gff3_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log \
 -o Bm88312_final-annotations.gff
+fasta_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log
+```
+<summary>The resulting file includes all of the annotations, transcripts and proteins predicted by SNAP and AUGUSTUS.
 
-OUTPUT:
-Bm88312_final-annotations.gff 
-
-maker -CTL
-
-fasta_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log -o Bm88312_final.maker.proteins.fasta
-
-OUTPUT:
-Bm88312_final.maker.proteins.fasta
+OUTPUT
+```
+Bm88312-annotations.zip
+Bm88312-genes.fasta.all.maker.proteins.fasta
+Bm88312-genes.fasta.all.maker.transcripts.fasta
+Bm88312_mitochondrion.csv
+```
