@@ -47,6 +47,7 @@ unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
 <summary> Optimal k-mer values for the genome assembly was determined with Velvet Advisor (https://dna.med.monash.edu.au/~torsten/velvet_advisor/)
 <summary> VelvetOptimiser ran at step 10 an step 2 to find the k-value. 
 
+
 ```
 sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2
 ```
@@ -58,12 +59,19 @@ sbatch velvetoptimiser_noclean.sh Bm88312_step2 69 89 2
 sbatch velvetoptimiser_noclean.sh Bm88312_step10 69 89 10
 ```
 
+|Step|Genome Size|# of Contigs|N50|
+|----|-----------|------------|---|
+|10  |40,859,984 |2,197 |120,975| 
+
+The highest fold coverage was 46.50 
+
 OUTPUT:
+
+```
 slurm-30186556.out
 slurm-30186446.out
 contigs.fa
-
-mv contigs.fa Bm88312.fasta
+```
 
 ```
 cp /project/farman_s25abt480/SCRIPTs/SimpleFastaHeaders.pl /project/farman_s25abt480/esya223
