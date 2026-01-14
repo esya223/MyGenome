@@ -83,7 +83,7 @@ velvetg Bm88312_step2_69_89_2
 <summary> Finalize genome assembly. Rename contigs.fa to Bm88312.fasta
 <summary> SimpleFastaHeaders.pl renames the headers for each contig.
 <summary> CullShortContigs.pl removes small contigs.
-<summary> </summary>SeqLen.pl checks overall sequence length and the length of each contig.
+<summary>SeqLen.pl checks overall sequence length and the length of each contig.
 
 ```
 perl SimpleFastaHeaders.pl Bm88312.fasta Bm88312
