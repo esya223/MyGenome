@@ -13,24 +13,30 @@ fastqc Bm88312_2.fq.gz
 
 ## Trimming
 
-Run relevant Trimmomatic command to trim forward and reverse sequences.
+<summary>Run relevant Trimmomatic command to trim forward and reverse sequences.
 
 ```
 java -jar trimmomatic-0.38.jar PE -threads 2 \-phred33 -trimlog Br88312_errorlog.txt \ Br88312_1.fq.gz \ Br88312_2.fq.gz \ Br88312_1_paired.fq.gz \ Br88312_1_unpaired.fq.gz \Br88312_2_paired.fq.gz \ Br88312_2_unpaired.fq.gz \ ILLUMINACLIP:adaptors.fa:2:30:10 SLIDINGWINDOW:20:20 MINLEN:150
 ```
 
+<summary>Run paired sequences through FASTQC to assess the quality of trimming.
 #### Output
 
 ```
 Bm88312_1_paired_fastqc.zip
 Bm88312_2_paired_fastqc.zip
 ```
-
+```
 unzip Bm88312_1_paired_fastqc.zip and Bm88312_2_paired_fastqc.zip
+```
 
 #### Full FastQC Results 
 <details>[Bm88312_1_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_1_paired_fastqc.html) 
 [Bm88312_2_paired_fastqc.html](https://github.com/esya223/MyGenome/blob/main/Bm88312_2_paired_fastqc.html)</details>
+
+| Sequence | Reads |
+| -------- | ----- |
+|Raw Reads | 7234892|
 
 ## Assembly
 
