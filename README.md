@@ -164,8 +164,6 @@ ncbi-blast-2.16.0+-x64-linux.tar.gz
 tar -zxvpf ncbi-blast-2.16.0+-x64-linux.tar.gz
 ./blastn -version
 ```
-
-```
 <summary>Ensure the total length of the mitochondrial sequences is <40kb 
   
 ```
