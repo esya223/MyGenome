@@ -244,6 +244,7 @@ maker 2>&1 | tee maker.log
 ```
 
 <summary> Merge results into one file
+  
 ```
 gff3_merge -d Bm88312_final.maker.output/Bm88312_final_master_datastore_index.log \
 -o Bm88312_final-annotations.gff
