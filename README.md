@@ -165,7 +165,8 @@ tar -zxvpf ncbi-blast-2.16.0+-x64-linux.tar.gz
 ./blastn -version
 ```
 
-```cd ~/blast
+```
+cd ~/blast
 blastn -query MoMitochondrion.fasta -subject Bm88312_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' > B71v2sh.Bm88312.BLAST
 ```
 
@@ -174,16 +175,19 @@ OUTPUT:
 B71v2sh.Bm88312.BLAST
 ```
 <summary>Ensure the total length of the mitochondrial sequences is <40kb 
+  
 ```
 awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.Bm88312.BLAST > Bm88312_mitochondrion.csv
 ```
 
 OUTPUT:
+
 ```
 Bm88312_mitochondrion.csv
 ```
 
 <summary>Use blastn to run a BLAST search against the reference genome (B71)
+  
 ```
 blastn -query B71v2sh_masked.fasta -subject Bm88312_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.Bm88312.BLAST
 ```
