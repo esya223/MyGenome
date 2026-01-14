@@ -218,14 +218,16 @@ Bm88312_final-snap.gff2
 ```
 
 <summary> Run SNAP
+  
 ```
 snap-hmm Moryzae.hmm Bm88312_final.fasta > Bm88312_final-snap.zff
 fathom Bm88312_final-snap.zff Bm88312_final.fasta -gene-stats
 ```
 
 <summary> Run AUGUSTUS
+  
 ```
-  augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/Bm88312_final.fasta > Bm88312-augustus.gff3
+augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/Bm88312_final.fasta > Bm88312-augustus.gff3
 ```
   
 OUTPUT:
