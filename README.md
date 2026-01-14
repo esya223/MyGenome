@@ -143,7 +143,9 @@ busco -i Bm88312_final.fasta \
 ```
 
 OUTPUT:
+```
 C:98.5%[S:98.2%,D:0.3%],F:0.8%,M:0.7%,n:758
+```
 
 |BUSCO score (%)|BUSCO score (complete + fragmented) (%)|
 |---------------|---------------------------------------|
